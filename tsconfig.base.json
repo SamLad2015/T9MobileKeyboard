@@ -21,5 +21,6 @@
       "@testnx/t9keys": ["libs/t9keys/src/index.ts"]
     }
   },
+  "include": ["**/*.ts"],
   "exclude": ["node_modules", "tmp"]
 }
