@@ -1,28 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { Message } from '@technoverse/api-interfaces';
+import { T9keys, T9key } from '@testnx/api-interfaces';
+import { T9Key } from './components/t9key';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
+  const [k, setKeys] = useState<T9keys>(t9Keys());
 
   useEffect(() => {
     fetch('/api')
       .then((r) => r.json())
-      .then(setMessage);
+      .then(setKeys);
   }, []);
 
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to test nx!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-          alt="Nx - Smart, Extensible Build Framework"
-        />
+        <h1>Welcome to T9 Tester!</h1>
       </div>
-      <div>{m.message}</div>
+      <div>{k.t9Keys.map(key => <T9Key keyNum={key.keyNum} keyChars={key.keyChars} />)}</div>
     </>
   );
 };
+
+const t9Keys = () => {
+  const t9Key: T9key = {
+    keyNum: '',
+    keyChars: []
+  };
+  const t9Keys: T9keys = {
+    t9Keys: [t9Key]
+  }
+  return t9Keys;
+}
 
 export default App;

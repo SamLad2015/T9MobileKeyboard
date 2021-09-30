@@ -4,6 +4,7 @@ import App from './app';
 
 describe('App', () => {
   afterEach(() => {
+    // @ts-ignore
     delete global['fetch'];
     cleanup();
   });
@@ -16,6 +17,6 @@ describe('App', () => {
     });
 
     const { baseElement } = render(<App />);
-    await waitFor(() => getByText(baseElement, 'my message'));
+    await waitFor(() => getByText(baseElement as HTMLElement, 'my message'));
   });
 });

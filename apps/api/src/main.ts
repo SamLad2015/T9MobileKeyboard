@@ -1,12 +1,10 @@
 import * as express from 'express';
-import { Message } from '@technoverse/api-interfaces';
+import { t9keys } from '@testnx/t9keys'
 
 const app = express();
 
-const greeting: Message = { message: 'Welcome to api!' };
-
 app.get('/api', (req, res) => {
-  res.send(greeting);
+  res.send(t9keys());
 });
 
 const port = process.env.port || 3333;

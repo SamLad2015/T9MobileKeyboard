@@ -66,6 +66,28 @@
         }
       }
     },
+    "t9keys": {
+      "root": "libs/t9keys",
+      "sourceRoot": "libs/t9keys/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/t9keys/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/t9keys"],
+          "options": {
+            "jestConfig": "libs/t9keys/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "testnx": {
       "root": "apps/testnx",
       "sourceRoot": "apps/testnx/src",
@@ -140,33 +162,6 @@
           }
         }
       }
-    },
-    "testnx-e2e": {
-      "root": "apps/testnx-e2e",
-      "sourceRoot": "apps/testnx-e2e/src",
-      "projectType": "application",
-      "targets": {
-        "e2e": {
-          "executor": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/testnx-e2e/cypress.json",
-            "devServerTarget": "testnx:serve",
-            "tsConfig": "apps/testnx-e2e/tsconfig.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "testnx:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/testnx-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
     }
   },
   "cli": {
@@ -175,15 +170,15 @@
   "generators": {
     "@nrwl/react": {
       "application": {
-        "style": "styled-jsx",
+        "style": "scss",
         "linter": "eslint",
         "babel": true
       },
       "component": {
-        "style": "styled-jsx"
+        "style": "scss"
       },
       "library": {
-        "style": "styled-jsx",
+        "style": "scss",
         "linter": "eslint"
       }
     }

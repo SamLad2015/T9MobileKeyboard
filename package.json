@@ -1,9 +1,10 @@
 {
-  "name": "technoverse",
+  "name": "testnx",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start": "nx run-many --target=serve --projects=api,testnx --parallel --maxParallel=2",
+    "serve": "nx serve",
     "build": "nx build",
     "test": "nx test"
   },
@@ -11,10 +12,11 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "express": "4.17.1",
+    "lodash": "^4.17.21",
+    "node-sass": "^6.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "regenerator-runtime": "0.13.7",
-    "styled-jsx": "3.4.4",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
@@ -37,7 +39,6 @@
     "@types/node": "14.14.33",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
-    "@types/styled-jsx": "2.2.8",
     "@typescript-eslint/eslint-plugin": "~4.28.3",
     "@typescript-eslint/parser": "~4.28.3",
     "babel-jest": "27.0.6",
