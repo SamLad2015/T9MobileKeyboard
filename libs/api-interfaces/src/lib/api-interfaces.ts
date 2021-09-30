@@ -5,4 +5,12 @@ export interface T9keys {
 export interface T9key {
   keyNum: string;
   keyChars: string[];
+  onChange: Function;
+}
+
+export interface ResultsData {
+  numbers: string;
+  results: string[];
+  possibles: string[];
+  onClick: Function;
 }

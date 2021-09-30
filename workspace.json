@@ -66,6 +66,28 @@
         }
       }
     },
+    "results": {
+      "root": "libs/results",
+      "sourceRoot": "libs/results/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/results/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/results"],
+          "options": {
+            "jestConfig": "libs/results/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "t9keys": {
       "root": "libs/t9keys",
       "sourceRoot": "libs/t9keys/src",

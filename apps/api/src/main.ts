@@ -1,10 +1,19 @@
 import * as express from 'express';
-import { t9keys } from '@testnx/t9keys'
+import { t9keys } from '@testnx/t9keys';
+import { results, addToDictionary } from '@testnx/results';
 
 const app = express();
 
-app.get('/api', (req, res) => {
+app.get('/api/keys', (req, res) => {
   res.send(t9keys());
+});
+
+app.put('/api/words/:word', (req, res) => {
+  res.send(addToDictionary(req.params.word));
+});
+
+app.get('/api/results/:number', (req, res) => {
+  res.send(results(req.params.number));
 });
 
 const port = process.env.port || 3333;

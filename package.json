@@ -12,12 +12,14 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "express": "4.17.1",
+    "fs": "0.0.1-security",
     "lodash": "^4.17.21",
-    "node-sass": "^6.0.1",
+    "node-sass": "^4.14.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "regenerator-runtime": "0.13.7",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "use-state-with-callback": "^2.0.3"
   },
   "devDependencies": {
     "@nrwl/cli": "12.9.0",
@@ -36,6 +38,7 @@
     "@testing-library/react-hooks": "7.0.1",
     "@types/express": "4.17.0",
     "@types/jest": "26.0.24",
+    "@types/lodash": "^4.14.175",
     "@types/node": "14.14.33",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
