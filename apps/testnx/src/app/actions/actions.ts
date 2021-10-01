@@ -1,3 +1,4 @@
+// Local dependencies
 import { LOAD_KEYS, LOAD_RESULTS, RESET_RESULTS, ADD_RESULT} from '../constants/constants';
 
 export const LoadKeys = (payload:any) => ({

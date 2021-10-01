@@ -1,7 +1,12 @@
+// External dependencies
 import { forEach, intersectionWith, differenceWith } from "lodash";
-import { ResultsData } from "@testnx/api-interfaces";
 import { writeFile } from 'fs';
+
+// Module dependencies
+import { ResultsData } from "@testnx/api-interfaces";
 import { keyMap } from "@testnx/t9keys";
+
+// Local dependencies
 import * as dictionaryData from "../data/dictionary.json";
 
 export function results(number): ResultsData {

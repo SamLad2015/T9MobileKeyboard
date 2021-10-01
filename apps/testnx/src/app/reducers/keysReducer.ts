@@ -1,4 +1,7 @@
+// Module dependencies
 import { T9keys } from '@testnx/api-interfaces';
+
+// Local dependencies
 import { LOAD_KEYS }  from '../constants/constants';
 
 const INITIAL_STATE : T9keys = {

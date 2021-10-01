@@ -1,24 +1,32 @@
+// External dependencies
 import React, { useEffect, useState } from "react";
 import { filter } from 'lodash';
+import { useDispatch, useSelector } from 'react-redux';
+
+// Module dependencies
 import { T9key } from "@testnx/api-interfaces";
+
+// Local dependencies
 import { Results, T9Key } from "../../components";
 import "./numpad.scss";
 import { getKeys,setKeys } from '../../actions/t9keysAction';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const Numpad = () => {
   const [numbers, setNumbers] = useState<string>("");
   const dispatch = useDispatch();
   const keys = useSelector((state: any) => state.keys.t9Keys);
 
+  // Load mobile keypad mappings
   useEffect(() => {
     dispatch(getKeys());
   }, [dispatch]);
 
+  // Set selected key and trigger to load results
   useEffect(() => {
     dispatch(setKeys(numbers));
   }, [numbers]);
 
+  // Handle mobile key button press
   function handleClick(newValue: string) {
      newValue = newValue === '<' ? numbers.substring(0, numbers.length - 1) : numbers + newValue;
      setNumbers(newValue);

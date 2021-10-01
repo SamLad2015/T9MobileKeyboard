@@ -1,6 +1,8 @@
+// External dependencies
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom';
 
+// Local dependencies
 import App from './app/app';
 
 ReactDOM.render(

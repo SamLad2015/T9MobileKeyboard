@@ -1,5 +1,9 @@
-import { T9keys, T9key } from '@testnx/api-interfaces';
+// External dependencies
 import { map, keys } from 'lodash';
+
+// Module dependencies
+import { T9keys, T9key } from '@testnx/api-interfaces';
+
 
 export const keyMap = {
   1: [],

@@ -1,6 +1,11 @@
+// External dependencies
 import { map } from "lodash";
 import { useDispatch, useSelector } from 'react-redux';
+
+// Module dependencies
 import { ResultsData } from "@testnx/api-interfaces";
+
+// Local dependencies
 import { addWord } from '../../actions/resultsAction';
 import "./results.scss";
 
@@ -8,6 +13,7 @@ export const Results = () => {
   const dispatch = useDispatch();
   const results = useSelector((state: any) => state.results);
 
+  // word click to add word to dictionary
   function handleClick(word: string) {
     dispatch(addWord(word));
   }

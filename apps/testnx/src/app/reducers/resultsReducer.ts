@@ -1,5 +1,10 @@
-import { ResultsData } from '@testnx/api-interfaces';
+// External dependencies
 import { filter } from 'lodash';
+
+// Module dependencies
+import { ResultsData } from '@testnx/api-interfaces';
+
+// Local dependencies
 import { LOAD_RESULTS, RESET_RESULTS, ADD_RESULT }  from '../constants/constants';
 
 const INITIAL_STATE : ResultsData = {

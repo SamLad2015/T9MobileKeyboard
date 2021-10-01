@@ -77,14 +77,6 @@
           "options": {
             "lintFilePatterns": ["libs/results/**/*.ts"]
           }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/results"],
-          "options": {
-            "jestConfig": "libs/results/jest.config.js",
-            "passWithNoTests": true
-          }
         }
       }
     },
@@ -98,14 +90,6 @@
           "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": ["libs/t9keys/**/*.ts"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/t9keys"],
-          "options": {
-            "jestConfig": "libs/t9keys/jest.config.js",
-            "passWithNoTests": true
           }
         }
       }

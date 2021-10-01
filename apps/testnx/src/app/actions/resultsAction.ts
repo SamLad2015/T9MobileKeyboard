@@ -1,3 +1,4 @@
+// Local dependencies
 import { AddResult } from "./actions";
 
 export const addWord = (word: string) => {
