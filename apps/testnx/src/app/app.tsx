@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@technoverse/api-interfaces';
+// External dependencies
+import { Provider } from 'react-redux';
+
+// Module dependencies
+import store from '../app/store/store';
+import Numpad from './components/numpad/numpad';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
-
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to test nx!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-          alt="Nx - Smart, Extensible Build Framework"
-        />
-      </div>
-      <div>{m.message}</div>
+      <Provider store={store}>
+        <Numpad />
+      </Provider>,
     </>
   );
 };

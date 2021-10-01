@@ -1,12 +1,22 @@
+// External dependencies
 import * as express from 'express';
-import { Message } from '@technoverse/api-interfaces';
+
+// Module dependencies
+import { t9keys } from '@testnx/t9keys';
+import { results, addToDictionary } from '@testnx/results';
 
 const app = express();
 
-const greeting: Message = { message: 'Welcome to api!' };
+app.get('/api/keys', (req, res) => {
+  res.send(t9keys());
+});
 
-app.get('/api', (req, res) => {
-  res.send(greeting);
+app.put('/api/words/:word', (req, res) => {
+  res.send(addToDictionary(req.params.word));
+});
+
+app.get('/api/results/:number', (req, res) => {
+  res.send(results(req.params.number));
 });
 
 const port = process.env.port || 3333;

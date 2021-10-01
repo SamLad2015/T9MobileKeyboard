@@ -13,10 +13,14 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@technoverse/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@testnx/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@testnx/results": ["libs/results/src/index.ts"],
+      "@testnx/t9keys": ["libs/t9keys/src/index.ts"]
     }
   },
+  "include": ["**/*.ts"],
   "exclude": ["node_modules", "tmp"]
 }
