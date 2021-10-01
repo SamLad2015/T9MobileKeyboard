@@ -8,5 +8,7 @@
 2) run 'npm serve' in order to run the app. npm run should start both api and app
 3) App is available for 'http://localhost:4200/'
 
+![EduMe Test](https://github.com/SamLad2015/testnx/blob/master/edume.png)
+
 This project was generated using [Nx](https://nx.dev).
 
