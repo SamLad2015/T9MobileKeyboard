@@ -1,10 +1,10 @@
-import { T9key } from '@testnx/api-interfaces';
+import { T9keyModel } from '../../../app/models/t9keys';
 import './t9key.scss';
 
-export const T9Key = (props: T9key) => {
+export const T9Key = (props: T9keyModel) => {
   function handleChange(number: string) {
     // Here, we invoke the callback with the new value
-    props.onChange(number);
+    props.onClick(number);
   }
 
   return (

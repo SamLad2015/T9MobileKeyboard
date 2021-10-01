@@ -13,8 +13,7 @@ export function results(number): ResultsData {
   if (digits.indexOf("1") > -1) return {
     numbers: digits.toString(),
     results: [],
-    possibles: [],
-    onClick: () => {}
+    possibles: []
   };
 
   return getWordsFromDigits(digits, finalList);
@@ -39,8 +38,7 @@ function getWordsFromDigits(digits, wordList): ResultsData {
   return {
     numbers: digits.join(''),
     results: intersectionWith(wordList, allPossibleWords),
-    possibles: differenceWith(allPossibleWords, wordList),
-    onClick: () => {}
+    possibles: differenceWith(allPossibleWords, wordList)
   };
 }
 

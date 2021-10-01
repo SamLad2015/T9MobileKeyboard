@@ -25,8 +25,7 @@ const t9KeysByMap = () => {
   return map(keys(keyMap), key => {
     const t9Key: T9key = {
       keyNum: key,
-      keyChars: keyMap[key],
-      onChange: () => {}
+      keyChars: keyMap[key]
     };
     return t9Key;
   });
