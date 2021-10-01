@@ -37,7 +37,8 @@ export const Numpad = () => {
             <div className="number">9</div>
             <div className="letters"></div>
           </a>
-          <a className="t9key empty" href="#"></a>
+          <div className="t9key empty">
+          </div>
           <a className="t9key" href="#" onClick={ () => handleClick('<')}>
             <div className="number">&#9003;</div>
             <div className="letters"></div>
