@@ -42,7 +42,7 @@ export const Numpad = () => {
           <T9Key key={key.keyNum} keyNum={key.keyNum} keyChars={key.keyChars} onClick={handleClick} />
         )}
           <a className="t9key" href="#">
-            <div className="number">9</div>
+            <div className="number">0</div>
             <div className="letters"></div>
           </a>
           <div className="t9key empty">
