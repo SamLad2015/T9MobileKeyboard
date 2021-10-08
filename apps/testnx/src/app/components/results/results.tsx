@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ResultsData } from "@testnx/api-interfaces";
 
 // Local dependencies
-import { addWord } from '../../actions/resultsAction';
+import { addWord, selectPrediction } from '../../actions/resultsAction';
 import "./results.scss";
 
 export const Results = () => {
@@ -14,14 +14,18 @@ export const Results = () => {
   const results = useSelector((state: any) => state.results);
 
   // word click to add word to dictionary
-  function handleClick(word: string) {
+  const handleClick = (word: string) => {
     dispatch(addWord(word));
+  }
+
+  const handlePrediction = (word: string) => {
+    dispatch(selectPrediction(word));
   }
 
   return (
     <>
       <div className="results">
-        <div>
+        <div className="main">
           {results.numbers.length > 0 && <h2>Words for {results.numbers}</h2>}
           {results.results.length > 0 && <div>
             <span>From dictionary</span>
@@ -34,6 +38,11 @@ export const Results = () => {
             </ul>
           </div>}
         </div>
+        {results.predictions.length > 0 && <div className="predictions">
+          <ul>{map(results.predictions, (prediction: string, i: number) =>
+            <li key={i}><a href="#" onClick={() => handlePrediction(prediction)}> {prediction} </a></li>)}
+          </ul>
+        </div>}
       </div>
     </>
   );

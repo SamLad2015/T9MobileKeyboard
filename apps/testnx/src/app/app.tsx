@@ -10,7 +10,7 @@ export const App = () => {
     <>
       <Provider store={store}>
         <Numpad />
-      </Provider>,
+      </Provider>
     </>
   );
 };

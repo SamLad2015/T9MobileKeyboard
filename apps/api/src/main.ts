@@ -3,7 +3,7 @@ import * as express from 'express';
 
 // Module dependencies
 import { t9keys } from '@testnx/t9keys';
-import { results, addToDictionary } from '@testnx/results';
+import { results, addToDictionary, selectPrediction } from '@testnx/results';
 
 const app = express();
 
@@ -17,6 +17,10 @@ app.put('/api/words/:word', (req, res) => {
 
 app.get('/api/results/:number', (req, res) => {
   res.send(results(req.params.number));
+});
+
+app.get('/api/words/select/:word', (req, res) => {
+  res.send(selectPrediction(req.params.word));
 });
 
 const port = process.env.port || 3333;
