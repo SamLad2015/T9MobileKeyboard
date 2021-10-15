@@ -94,6 +94,28 @@
         }
       }
     },
+    "test": {
+      "root": "libs/test",
+      "sourceRoot": "libs/test/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/test/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/test"],
+          "options": {
+            "jestConfig": "libs/test/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "testnx": {
       "root": "apps/testnx",
       "sourceRoot": "apps/testnx/src",

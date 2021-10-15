@@ -12,3 +12,12 @@
 
 This project was generated using [Nx](https://nx.dev).
 
+## Generate an application
+Run nx g @nrwl/react:app my-app to generate an application.
+
+When using Nx, you can create multiple applications and libraries in the same workspace.
+
+## Generate a library
+Run nx g @nrwl/node:lib my-lib to generate a library.
+
+Libraries are shareable across libraries and applications. They can be imported from @nx-example/mylib.
