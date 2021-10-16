@@ -1,6 +1,5 @@
 // External dependencies
 import React, { useEffect, useState } from "react";
-import { filter } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Module dependencies
