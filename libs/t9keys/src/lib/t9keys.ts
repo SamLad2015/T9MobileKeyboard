@@ -18,7 +18,7 @@ export const keyMap = {
 };
 
 
-export function t9keys(): T9keys {
+export const t9keys = (): T9keys => {
   return {
     t9Keys: t9KeysByMap()
   };

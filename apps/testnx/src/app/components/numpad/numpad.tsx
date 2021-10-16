@@ -26,7 +26,7 @@ export const Numpad = () => {
   }, [numbers]);
 
   // Handle mobile key button press
-  function handleClick(newValue: string) {
+  const handleClick = (newValue: string) => {
      newValue = newValue === '<' ? numbers.substring(0, numbers.length - 1) : numbers + newValue;
      setNumbers(newValue);
   }
