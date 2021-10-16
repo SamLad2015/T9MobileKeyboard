@@ -33,27 +33,27 @@ export const Numpad = () => {
   }
 
   return (
-    <>
-      <div className="t9App">
+    <div className="t9App">
         <div>
           <Results />
         </div>
         <div className="keyboard">{keys.map((key:T9key) =>
           <T9Key key={key.keyNum} keyNum={key.keyNum} keyChars={key.keyChars} onClick={handleClick} />
         )}
-          <a className="t9key" href="#">
+          <button className="t9key">
             <div className="number">0</div>
-            <div className="letters"></div>
-          </a>
-          <div className="t9key empty">
-          </div>
-          <a className="t9key" href="#" onClick={ () => handleClick('<')}>
+            <div className='letters'/>
+          </button>
+          <button className="t9key empty">
+            <div className="number">&nbsp;</div>
+            <div className='letters'/>
+          </button>
+          <button className="t9key" onClick={ () => handleClick('<')}>
             <div className="number">&#9003;</div>
-            <div className="letters"></div>
-          </a>
+            <div className='letters'/>
+          </button>
         </div>
       </div>
-    </>
   );
 };
 

@@ -10,9 +10,8 @@ import { keyMap } from "@testnx/t9keys";
 import * as dictionaryData from "../data/dictionary.json";
 
 export const results = (number: string): ResultsData => {
-  let finalList = dictionaryData;
-  var digits = number.toString().split("");
-  var wordLength = digits.length;
+  const finalList = dictionaryData;
+  const digits = number.toString().split('');
 
   // Search loop
   if (digits.indexOf("1") > -1) return {
@@ -39,7 +38,6 @@ export const selectPrediction = (word): ResultsData  => {
 const getWordsFromDigits = (digits: string[], finalList: string[]): ResultsData => {
   const wordList = filter(finalList, item => item.length === digits.length);
   const predictedWordList = filter(finalList, item => item.length === digits.length + 1);
-  const matches: string[] = [];
   const twoDArrayOfLetters = [];
   forEach(digits, digit => {
     twoDArrayOfLetters.push(keyMap[digit]);

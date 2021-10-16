@@ -2,9 +2,6 @@
 import { map } from "lodash";
 import { useDispatch, useSelector } from 'react-redux';
 
-// Module dependencies
-import { ResultsData } from "@testnx/api-interfaces";
-
 // Local dependencies
 import { addWord, selectPrediction } from '../../actions/resultsAction';
 import "./results.scss";
@@ -23,8 +20,7 @@ export const Results = () => {
   }
 
   return (
-    <>
-      <div className="results">
+    <div className="results">
         <div className="main">
           {results.numbers.length > 0 && <h2>Words for {results.numbers}</h2>}
           {results.results.length > 0 && <div>
@@ -44,6 +40,5 @@ export const Results = () => {
           </ul>
         </div>}
       </div>
-    </>
   );
 };

@@ -1,10 +1,12 @@
+@import "../../../assets/styles/colors";
+
 .results {
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid $black;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: black;
-  color: white;
+  background-color: $black;
+  color: $white;
   height: 380px;
   overflow:hidden auto;
   position: relative;
@@ -18,7 +20,7 @@
       li {
         list-style: none;
         display: inline-block;
-        color: chartreuse;
+        color: $lightgreen;
         &:after {
           content: " , ";
         }
@@ -29,7 +31,7 @@
       &.possibles {
         li {
           a {
-            color: orangered;
+            color: $orangered;
             text-decoration: none;
             &:hover {
               text-decoration: underline;
@@ -40,10 +42,10 @@
     }
   }
   .predictions {
-    color: white;
+    color: $white;
     height: 30px;
     width: 100%;
-    background: grey;
+    background: $grey;
     bottom: 0;
     ul {
       height: auto;
@@ -52,16 +54,16 @@
       li {
         list-style: none;
         display: inline-block;
-        background-color: white;
+        background-color: $white;
         margin: 0 5px;
         padding: 0 5px;
         border-radius: 10px;
         a {
-          color: black;
+          color: $black;
           text-decoration: none;
         }
         &:hover {
-          background-color: yellow;
+          background-color: $yellow;
         }
       }
     }
