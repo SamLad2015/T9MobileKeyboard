@@ -7,11 +7,9 @@ import Numpad from './components/numpad/numpad';
 
 export const App = () => {
   return (
-    <>
-      <Provider store={store}>
-        <Numpad />
-      </Provider>
-    </>
+    <Provider store={store}>
+      <Numpad />
+    </Provider>
   );
 };
 
