@@ -23,7 +23,7 @@ export const results = (number: string): ResultsData => {
   return getWordsFromDigits(digits, finalList);
 };
 
-export const addToDictionary = (word) => {
+export const addToDictionary = (word: string): void => {
   dictionaryData.push(word);
   writeFile('libs/results/src/data/dictionary.json', JSON.stringify(dictionaryData), (err) => {
     if (err) throw err;
@@ -31,7 +31,7 @@ export const addToDictionary = (word) => {
   });
 }
 
-export const selectPrediction = (word): ResultsData  => {
+export const selectPrediction = (word: string): ResultsData  => {
   return results(wordToNumber(word));
 }
 

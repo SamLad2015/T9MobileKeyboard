@@ -2,7 +2,7 @@
 import { T9keyModel } from '../../models';
 import './t9key.scss';
 
-export const T9Key = (props: T9keyModel): any => {
+export const T9Key = (props: T9keyModel): JSX.Element => {
   const handleClick = (number: string) => {
     // Here, we invoke the callback with the new value
     if (parseInt(number) < 2) {

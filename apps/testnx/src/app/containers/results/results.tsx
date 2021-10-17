@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addWord, selectPredict } from '../../actions';
 import './results.scss';
 
-export const Results = () :any => {
+export const Results = () :JSX.Element => {
   const dispatch = useDispatch();
   const results = useSelector((state: any) => state.results);
 

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from '../app/store/store';
 import Numpad from './containers/numpad/numpad';
 
-export const App = () :any => {
+export const App = () :JSX.Element => {
   return (
     <Provider store={store}>
       <Numpad />
