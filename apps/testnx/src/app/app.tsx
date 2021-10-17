@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 // Module dependencies
 import store from '../app/store/store';
-import Numpad from './components/numpad/numpad';
+import Numpad from './containers/numpad/numpad';
 
 export const App = () => {
   return (

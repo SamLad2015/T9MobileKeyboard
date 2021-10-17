@@ -1,2 +1,2 @@
 export * from './t9key/t9key';
-export * from './results/results';
+export * from '../containers/results/results';
