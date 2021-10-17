@@ -7,8 +7,8 @@ import { T9key } from '@testnx/api-interfaces';
 
 // Local dependencies
 import { Results, T9Key } from '../../components';
+import { getKeys,setKeys } from '../../actions';
 import './numpad.scss';
-import { getKeys,setKeys } from '../../actions/t9keysAction';
 
 export const Numpad = () => {
   const [numbers, setNumbers] = useState<string>('');

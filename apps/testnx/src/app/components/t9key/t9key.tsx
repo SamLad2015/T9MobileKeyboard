@@ -1,5 +1,5 @@
 // Local dependencies
-import { T9keyModel } from '../../models/t9keys';
+import { T9keyModel } from '../../models';
 import './t9key.scss';
 
 export const T9Key = (props: T9keyModel) => {

@@ -3,7 +3,7 @@ import { map } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Local dependencies
-import { addWord, selectPredict } from '../../actions/resultsAction';
+import { addWord, selectPredict } from '../../actions';
 import './results.scss';
 
 export const Results = () => {
