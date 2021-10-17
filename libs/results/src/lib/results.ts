@@ -1,20 +1,20 @@
 // External dependencies
-import { differenceWith, filter, forEach, intersectionWith, findKey } from "lodash";
-import { writeFile } from "fs";
+import { differenceWith, filter, forEach, intersectionWith, findKey } from 'lodash';
+import { writeFile } from 'fs';
 
 // Module dependencies
-import { ResultsData } from "@testnx/api-interfaces";
-import { keyMap } from "@testnx/t9keys";
+import { ResultsData } from '@testnx/api-interfaces';
+import { keyMap } from '@testnx/t9keys';
 
 // Local dependencies
-import * as dictionaryData from "../data/dictionary.json";
+import * as dictionaryData from '../data/dictionary.json';
 
 export const results = (number: string): ResultsData => {
   const finalList = dictionaryData;
   const digits = number.toString().split('');
 
   // Search loop
-  if (digits.indexOf("1") > -1) return {
+  if (digits.indexOf('1') > -1) return {
     numbers: digits.toString(),
     results: [],
     possibles: [],
@@ -25,7 +25,7 @@ export const results = (number: string): ResultsData => {
 
 export const addToDictionary = (word) => {
   dictionaryData.push(word);
-  writeFile("libs/results/src/data/dictionary.json", JSON.stringify(dictionaryData), (err) => {
+  writeFile('libs/results/src/data/dictionary.json', JSON.stringify(dictionaryData), (err) => {
     if (err) throw err;
     return word;
   });
@@ -45,7 +45,7 @@ const getWordsFromDigits = (digits: string[], finalList: string[]): ResultsData 
   const allPossibleWords = combinations(twoDArrayOfLetters);
 
   return {
-    numbers: digits.join(""),
+    numbers: digits.join(''),
     results: intersectionWith(wordList, allPossibleWords),
     possibles: differenceWith(allPossibleWords, wordList),
     predictions: predictedWords(allPossibleWords, predictedWordList)
@@ -53,7 +53,7 @@ const getWordsFromDigits = (digits: string[], finalList: string[]): ResultsData 
 };
 
 const combinations = (list: [][], n = 0, result = [], current = []) => {
-  if (n === list.length) result.push(current.join(""));
+  if (n === list.length) result.push(current.join(''));
   else list[n].forEach(item => combinations(list, n + 1, result, [...current, item]));
 
   return result;

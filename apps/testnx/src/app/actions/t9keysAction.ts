@@ -1,9 +1,9 @@
 // Local dependencies
-import { LoadKeys, LoadResults, ResetResults } from "./actions";
+import { LoadKeys, LoadResults, ResetResults } from './actions';
 
 export const getKeys = () => {
   return async (dispatch: any) => {
-    const res: any = await fetch("api/keys");
+    const res: any = await fetch('api/keys');
     const response = await res.json();
     dispatch(LoadKeys(response.t9Keys));
   };

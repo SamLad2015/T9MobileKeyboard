@@ -1,17 +1,17 @@
 // External dependencies
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Module dependencies
-import { T9key } from "@testnx/api-interfaces";
+import { T9key } from '@testnx/api-interfaces';
 
 // Local dependencies
-import { Results, T9Key } from "../../components";
-import "./numpad.scss";
+import { Results, T9Key } from '../../components';
+import './numpad.scss';
 import { getKeys,setKeys } from '../../actions/t9keysAction';
 
 export const Numpad = () => {
-  const [numbers, setNumbers] = useState<string>("");
+  const [numbers, setNumbers] = useState<string>('');
   const dispatch = useDispatch();
   const keys = useSelector((state: any) => state.keys.t9Keys);
 
@@ -32,23 +32,23 @@ export const Numpad = () => {
   }
 
   return (
-    <div className="t9App">
+    <div className='t9App'>
         <div>
           <Results />
         </div>
-        <div className="keyboard">{keys.map((key:T9key) =>
+        <div className='keyboard'>{keys.map((key:T9key) =>
           <T9Key key={key.keyNum} keyNum={key.keyNum} keyChars={key.keyChars} onClick={handleClick} />
         )}
-          <button className="t9key">
-            <div className="number">0</div>
+          <button className='t9key'>
+            <div className='number'>0</div>
             <div className='letters'/>
           </button>
-          <button className="t9key empty">
-            <div className="number">&nbsp;</div>
+          <button className='t9key empty'>
+            <div className='number'>&nbsp;</div>
             <div className='letters'/>
           </button>
-          <button className="t9key" onClick={ () => handleClick('<')}>
-            <div className="number">&#9003;</div>
+          <button className='t9key' onClick={ () => handleClick('<')}>
+            <div className='number'>&#9003;</div>
             <div className='letters'/>
           </button>
         </div>

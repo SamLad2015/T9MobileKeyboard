@@ -1,4 +1,4 @@
-@import "apps/testnx/src/assets/styles/colors";
+@import 'apps/testnx/src/assets/styles/colors';
 
 .results {
   text-align: center;
@@ -22,10 +22,10 @@
         display: inline-block;
         color: $lightgreen;
         &:after {
-          content: " , ";
+          content: ' , ';
         }
         &:last-child:after {
-          content: "";
+          content: '';
         }
       }
       &.possibles {

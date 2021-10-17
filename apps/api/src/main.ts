@@ -12,7 +12,8 @@ app.get('/api/keys', (req, res) => {
 });
 
 app.put('/api/words/:word', (req, res) => {
-  res.send(addToDictionary(req.params.word));
+  addToDictionary(req.params.word);
+  res.sendStatus(200);
 });
 
 app.get('/api/results/:number', (req, res) => {

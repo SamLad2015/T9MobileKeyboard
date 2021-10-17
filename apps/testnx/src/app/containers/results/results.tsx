@@ -1,10 +1,10 @@
 // External dependencies
-import { map } from "lodash";
+import { map } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Local dependencies
 import { addWord, selectPrediction } from '../../actions/resultsAction';
-import "./results.scss";
+import './results.scss';
 
 export const Results = () => {
   const dispatch = useDispatch();
@@ -20,8 +20,8 @@ export const Results = () => {
   }
 
   return (
-    <div className="results">
-        <div className="main">
+    <div className='results'>
+        <div className='main'>
           {results.numbers.length > 0 && <h2>Words for {results.numbers}</h2>}
           {results.results.length > 0 && <div>
             <span>From dictionary</span>
@@ -29,14 +29,14 @@ export const Results = () => {
           </div>}
           {results.possibles.length > 0 && <div>
             <span>Not present in dictionary (click to add to dictionary)</span>
-            <ul className="possibles">{map(results.possibles, (possible: string, i: number) =>
-              <li key={i}><a href="#" onClick={() => handleClick(possible)}> {possible} </a></li>)}
+            <ul className='possibles'>{map(results.possibles, (possible: string, i: number) =>
+              <li key={i}><a href='#' onClick={() => handleClick(possible)}> {possible} </a></li>)}
             </ul>
           </div>}
         </div>
-        {results.predictions.length > 0 && <div className="predictions">
+        {results.predictions.length > 0 && <div className='predictions'>
           <ul>{map(results.predictions, (prediction: string, i: number) =>
-            <li key={i}><a href="#" onClick={() => handlePrediction(prediction)}> {prediction} </a></li>)}
+            <li key={i}><a href='#' onClick={() => handlePrediction(prediction)}> {prediction} </a></li>)}
           </ul>
         </div>}
       </div>

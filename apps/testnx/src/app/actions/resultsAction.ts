@@ -1,5 +1,5 @@
 // Local dependencies
-import { AddResult, SelectPrediction } from "./actions";
+import { AddResult, SelectPrediction } from './actions';
 
 export const addWord = (word: string) => {
     const requestOptions = {
