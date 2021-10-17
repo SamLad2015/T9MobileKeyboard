@@ -33,3 +33,5 @@ const t9KeysByMap = () => {
     return t9Key;
   });
 }
+
+export default t9keys;

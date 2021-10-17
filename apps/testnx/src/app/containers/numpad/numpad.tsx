@@ -10,7 +10,7 @@ import { Results, T9Key } from '../../components';
 import { getKeys,setKeys } from '../../actions';
 import './numpad.scss';
 
-export const Numpad = () => {
+export const Numpad = () :any => {
   const [numbers, setNumbers] = useState<string>('');
   const dispatch = useDispatch();
   const keys = useSelector((state: any) => state.keys.t9Keys);
