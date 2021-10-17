@@ -3,7 +3,7 @@ import { map } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Local dependencies
-import { addWord, selectPrediction } from '../../actions/resultsAction';
+import { addWord, selectPredict } from '../../actions/resultsAction';
 import './results.scss';
 
 export const Results = () => {
@@ -16,7 +16,7 @@ export const Results = () => {
   }
 
   const handlePrediction = (word: string) => {
-    dispatch(selectPrediction(word));
+    dispatch(selectPredict(word));
   }
 
   return (

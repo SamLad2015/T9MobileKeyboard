@@ -1,5 +1,5 @@
 // Local dependencies
-import { AddResult, SelectPrediction } from './actions';
+import { addResult, selectPrediction } from './actions';
 
 export const addWord = (word: string) => {
     const requestOptions = {
@@ -10,14 +10,14 @@ export const addWord = (word: string) => {
 
   return async (dispatch: any) => {
     await fetch(`/api/words/${word}`, requestOptions);
-    dispatch(AddResult(word));
+    dispatch(addResult(word));
   };
 };
 
-export const selectPrediction = (word: string) => {
+export const selectPredict = (word: string) => {
   return async (dispatch: any) => {
     const res: any = await fetch(`/api/words/select/${word}`);
     const response = await res.json();
-    dispatch(SelectPrediction(response));
+    dispatch(selectPrediction(response));
   };
 };

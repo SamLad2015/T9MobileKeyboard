@@ -5,11 +5,11 @@ import thunk from 'redux-thunk';
 // Local dependencies
 import { keysReducer, resultsReducer } from '../reducers';
 
-const reducer = combineReducers({
+const appReducer = combineReducers({
   keys: keysReducer,
   results: resultsReducer
 });
 
-export const store = createStore(reducer, applyMiddleware(thunk));
+export const store = createStore(appReducer, applyMiddleware(thunk));
 
 export default store;
