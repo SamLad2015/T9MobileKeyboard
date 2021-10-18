@@ -8,7 +8,7 @@ import './results.scss';
 
 export const Results = () :JSX.Element => {
   const dispatch = useDispatch();
-  const results = useSelector((state: any) => state.results);
+  const { numbers, results, possibles, predictions } = useSelector((state: any) => state.results);
 
   // word click to add word to dictionary
   const handleClick = (word: string) => {
@@ -22,20 +22,20 @@ export const Results = () :JSX.Element => {
   return (
     <div className='results'>
       <div className='main'>
-        {results.numbers.length > 0 && <h2>Words for {results.numbers}</h2>}
-        {results.results.length > 0 && <div>
+        {numbers.length > 0 && <h2>Words for {numbers}</h2>}
+        {results.length > 0 && <div>
           <span>From dictionary</span>
-          <ul>{map(results.results, (result: string, i: number) => <li key={i}> {result} </li>)}</ul>
+          <ul>{map(results, (result: string, i: number) => <li key={i}> {result} </li>)}</ul>
         </div>}
-        {results.possibles.length > 0 && <div>
+        {possibles.length > 0 && <div>
           <span>Not present in dictionary (click to add to dictionary)</span>
-          <ul className='possibles'>{map(results.possibles, (possible: string, i: number) =>
+          <ul className='possibles'>{map(possibles, (possible: string, i: number) =>
             <li key={i}><a href='#' onClick={() => handleClick(possible)}> {possible} </a></li>)}
           </ul>
         </div>}
       </div>
-      {results.predictions.length > 0 && <div className='predictions'>
-        <ul>{map(results.predictions, (prediction: string, i: number) =>
+      {predictions.length > 0 && <div className='predictions'>
+        <ul>{map(predictions, (prediction: string, i: number) =>
           <li key={i}><a href='#' onClick={() => handlePrediction(prediction)}> {prediction} </a></li>)}
         </ul>
       </div>}
